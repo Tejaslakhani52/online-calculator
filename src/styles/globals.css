@@ -2,26 +2,184 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Inter', sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif !important; */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+input {
+  background-color: transparent;
+  border: none;
+}
+
+
+input:focus-visible {
+  border: none;
+  outline: none;
+}
+
+.cal_button {
+  width: 90px;
+  height: 45px;
+  background: linear-gradient(130deg, rgba(255, 255, 255, 0.31) -9.69%, rgba(255, 255, 255, 0.38) 114.23%);
+  border: 0.811px solid rgba(255, 255, 255, 0.85);
+  margin: 6px;
+  border-radius: 12px;
+  font-size: 17px;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.text_shadow {
+  text-shadow: 0px 1.6218206882476807px 2.4327309131622314px #0094FF;
+}
+
+.light_blue_linear {
+  background: linear-gradient(203deg, rgba(255, 255, 255, 0.76) -11.83%, rgba(255, 255, 255, 0.00) 111.4%);
+  box-shadow: 0px 0px 10.00559px 0px rgba(255, 255, 255, 0.43) inset;
+}
+
+.col_red {
+  color: #f87171;
+  width: 70px;
+  font-size: 27px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.cal_show_box {
+  width: 23.5%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  margin-bottom: 25px;
+  padding: 30px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  border-bottom: 5px solid transparent;
+}
+
+.cal_show_box:hover {
+  border-bottom: 5px solid #f87171;
+  transition: 0.5s all;
+  box-shadow: 0px 2.13692px 4.27384px 0px rgba(0, 0, 0, 0.08), 1.06846px 8.54768px 8.54768px 0px rgba(0, 0, 0, 0.07), 2.13692px 19.23227px 11.75306px 0px rgba(0, 0, 0, 0.04), 4.27384px 33.12225px 13.88998px 0px rgba(0, 0, 0, 0.01), 6.41076px 52.35452px 14.95844px 0px rgba(0, 0, 0, 0.00);
+}
+
+.red_Gred {
+  background: radial-gradient(183.35% 150.42% at 12.78% -20.92%, rgba(255, 96, 94, 0.58) 0%, rgba(255, 96, 94, 0.20) 100%);
+}
+
+.common_input {
+  border: 1px solid #C2C2C2;
+  padding: 7px 10px;
+  width: 100%;
+  border-radius: 3px;
+
+}
+
+.common_input:focus {
+  border: 1px solid #f87171;
+}
+
+select:focus-visible {
+  outline: none;
+}
+
+.onFocus_select {
+  border: 1px solid #C2C2C2;
+  padding: 7px 10px;
+  border-radius: 3px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.onFocus_select:focus {
+  border: 1px solid #f87171;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.p_text {
+  font-size: 17px;
+}
+
+.h2_Title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.key {
+  margin: 15px 0px;
+}
+
+.key h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #393939;
+  margin-bottom: 5px;
+}
+
+.key p {
+  font-size: 17px;
+  color: #393939;
+}
+
+.common_boxshadow {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2.91px 7.76px 0px;
+}
+
+.key li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.f_arial {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.f_Inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.f_red {
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+@media only screen and (max-width: 640px) {
+  .cal_button {
+    width: -webkit-fill-available;
+    height: 40px;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@media only screen and (max-width: 740px) {
+  .cal_button {
+    width: -webkit-fill-available;
+    height: 40px;
+  }
+
+  .cal_show_box {
+    width: 48.5%;
+    margin-bottom: 15px;
+
+  }
 }
