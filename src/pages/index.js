@@ -25,17 +25,18 @@ export default function Home() {
           backgroundImage: "url(./images/HeroSection.svg)",
           height: "auto",
           backgroundSize: "cover",
+          backgroundPosition: "bottom",
         }}
-        className="pb-[250px]"
+        className="pb-[120px]"
       >
-        <h1 className="text-[#f87171] text-center text-[30px] sm:text-[45px] font-[700] py-8 f_arial">
-          Online Calculator Tools: Simplify Your Calculations with Ease
+        <h1 className="text-[#f87171] text-center text-[30px] sm:text-[48px] uppercase font-[800] pt-20 pb-10 f_arial">
+          Online Calculator Tools
         </h1>
 
         <div>
           <SearchBar />
 
-          <p className="text-[#FFF] text-center f_Inter py-8 w-[90%] sm:w-[70%] text-[17px] mx-auto">
+          <p className="text-[#FFF] text-center f_Inter pt-14 pb-8 w-[90%] sm:w-[70%] text-[17px] font-semibold mx-auto">
             The top online calculator tool is your ultimate companion for quick
             and accurate calculations, offering a user-friendly interface,
             versatile functions, financial and scientific capabilities, unit

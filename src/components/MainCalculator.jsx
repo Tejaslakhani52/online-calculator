@@ -53,7 +53,7 @@ export default function MainCalculator() {
 
   return (
     <div
-      className="w-fit mx-auto rounded-[31px] px-3 sm:max-w-[90%] mt-[-230px]"
+      className="w-fit mx-auto rounded-[31px] px-3 sm:max-w-[90%] mt-[-110px]"
       style={{
         background: "#f87171",
       }}
