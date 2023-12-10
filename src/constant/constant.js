@@ -69,4 +69,5 @@ export const allCalculator = [
   },
   { name: "Date Calculator", path: "/date-calculator" },
   { name: "Percentage Calculator", path: "/percentage-calculator" },
+  { name: "Fraction Calculator", path: "/fraction-calculator" },
 ];

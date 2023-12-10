@@ -1,11 +1,30 @@
+import CalTitleBanner from "@/components/common/CalTitleBanner";
+import CalculateButton from "@/components/common/CalculateButton";
+import CancleButton from "@/components/common/CancleButton";
+import CommonInput from "@/components/common/CommonInput";
+import FormBox from "@/components/common/FormBox";
+import Layout from "@/components/common/Layout";
+import SelectMenu from "@/components/common/SelectMenu";
+import Head from "next/head";
 import React, { useState } from "react";
+import { toast } from "react-hot-toast";
+
+const data = [
+  { name: "+", value: "add" },
+  { name: "−", value: "subtract" },
+  { name: "×", value: "multiply" },
+  { name: "÷", value: "divide" },
+];
 
 export default function index() {
-  const [numerator1, setNumerator1] = useState("");
-  const [denominator1, setDenominator1] = useState("");
-  const [numerator2, setNumerator2] = useState("");
-  const [denominator2, setDenominator2] = useState("");
+  const [numerator1, setNumerator1] = useState(0);
+  const [denominator1, setDenominator1] = useState(0);
+  const [numerator2, setNumerator2] = useState(0);
+  const [denominator2, setDenominator2] = useState(0);
   const [result, setResult] = useState(null);
+  const [showAns, setShowAns] = useState(false);
+
+  const [selectValue, setSelectValue] = useState("add");
 
   const calculateFraction = (operation) => {
     if (numerator1 && denominator1 && numerator2 && denominator2) {
@@ -37,8 +56,65 @@ export default function index() {
   };
 
   return (
-    <div>
-      <h2>Fraction Calculator</h2>
+    <div className="bg-[#F8F8F8] pb-[100px]">
+      <CalTitleBanner
+        title={"Instant Math Mastery: Fraction Calculator Power"}
+      />
+
+      <Layout
+        box1={
+          <>
+            <p className="py-[10px] text-[17px]"></p>
+            <FormBox title={"Fraction Calculator"}>
+              <div className="flex items-center justify-center gap-4 py-[50px]">
+                <div>
+                  <CommonInput value={numerator1} setValue={setNumerator1} />
+                  <div className="h-[1px] bg-black my-2"></div>
+                  <CommonInput value={numerator2} setValue={setNumerator2} />
+                </div>
+
+                <SelectMenu
+                  value={selectValue}
+                  setValue={setSelectValue}
+                  data={data}
+                  font={"25px"}
+                />
+
+                <div>
+                  <CommonInput
+                    value={denominator1}
+                    setValue={setDenominator1}
+                  />
+                  <div className="h-[1px] bg-black my-2"></div>
+                  <CommonInput
+                    value={denominator2}
+                    setValue={setDenominator2}
+                  />
+                </div>
+              </div>
+
+              <div className="flex justify-between pt-[20px] pb-[20px] text-[18px]">
+                <CalculateButton onClick={calculateFraction(selectValue)}>
+                  Calculate
+                </CalculateButton>
+
+                <CancleButton
+                  onClick={() => {
+                    setNumerator1(0);
+                    setDenominator1(0);
+                    setNumerator2(0);
+                    setDenominator2(0);
+                    setShowAns(false);
+                  }}
+                >
+                  RESET
+                </CancleButton>
+              </div>
+            </FormBox>
+          </>
+        }
+      />
+      {/* <h2>Fraction Calculator</h2>
       <div>
         <label>Fraction 1:</label>
         <input
@@ -75,7 +151,7 @@ export default function index() {
         <button onClick={() => calculateFraction("multiply")}>Multiply</button>
         <button onClick={() => calculateFraction("divide")}>Divide</button>
       </div>
-      {result && <p>Result: {result}</p>}
+      {result && <p>Result: {result}</p>} */}
     </div>
   );
 }
